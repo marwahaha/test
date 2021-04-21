@@ -8,6 +8,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2-beta # use either @v2-beta or @master. Eventually there will be a @v2 tag.
 
+      - name: smake recent.csv file
+        run: |
+          touch _data/recent.csv
       - name: set up recent.csv
         run: |
           echo "id" > _data/recent.csv
