@@ -8,8 +8,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2-beta # use either @v2-beta or @master. Eventually there will be a @v2 tag.
 
-      - name: recently updated files
+      - name: set up recent.csv
         run: |
-          git log --pretty=format: --name-only --since="7 days ago" | head -n 10 > recent.txt
+          echo "id" > _data/recent.csv
+      - name: get recently updated files
+        run: |
+          git log --pretty=format: --name-only --since="7 days ago" > _data/recent.csv
   
       - uses: stefanzweifel/git-auto-commit-action@v4
