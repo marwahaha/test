@@ -10,7 +10,6 @@ jobs:
 
       - name: get recent files
         run: |
-          # do some operation that changes a file in the git repo
           git log --pretty=format: --name-only --since="7 days ago"  > recent.md
   
       - uses: stefanzweifel/git-auto-commit-action@v4
