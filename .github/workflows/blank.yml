@@ -7,7 +7,8 @@ jobs:
       # Checkout the branch
       - name: checkout
         uses: actions/checkout@v2-beta # use either @v2-beta or @master. Eventually there will be a @v2 tag.
-        
+        with:
+          fetch-depth: 0
       - name: set up recent.csv
         run: |
           echo "id" > _data/recent.csv
